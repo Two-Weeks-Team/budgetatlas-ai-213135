@@ -11,11 +11,11 @@ async def health():
     return {"ok": True}
 
 
-@router.post("/api/plan")
+@router.post("/plan")
 async def create_plan(payload: PlanRequest):
     return build_plan(payload.query, payload.preferences)
 
 
-@router.post("/api/insights")
+@router.post("/insights")
 async def create_insights(payload: InsightRequest):
     return build_insights(payload.selection, payload.context)
